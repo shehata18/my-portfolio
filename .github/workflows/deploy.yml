@@ -25,10 +25,28 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: |
+          npm ci
+          npm list vite || npm install vite --save-dev
 
       - name: Build project
-        run: npm run build
+        run: |
+          npm run build
+          if [ ! -d "dist" ] || [ ! -f "dist/index.html" ]; then
+            echo "Build failed - dist directory or index.html is missing"
+            exit 1
+          fi
+
+      - name: Verify build output
+        run: |
+          if [ ! -f "dist/index.html" ]; then
+            echo "index.html is missing from build output"
+            exit 1
+          fi
+          if [ ! -f "dist/assets/index.js" ] && [ ! -f "dist/assets/index-*.js" ]; then
+            echo "JavaScript bundle is missing from build output"
+            exit 1
+          fi
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
