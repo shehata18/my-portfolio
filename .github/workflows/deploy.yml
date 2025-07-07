@@ -30,12 +30,14 @@ jobs:
           npm list vite || npm install vite --save-dev
 
       - name: Build project
+        run: npm run build
+
+      - name: List build output
         run: |
-          npm run build
-          if [ ! -d "dist" ] || [ ! -f "dist/index.html" ]; then
-            echo "Build failed - dist directory or index.html is missing"
-            exit 1
-          fi
+          echo "Contents of dist directory:"
+          ls -la dist/
+          echo "Contents of dist/assets directory:"
+          ls -la dist/assets/
 
       - name: Verify build output
         run: |
@@ -43,8 +45,13 @@ jobs:
             echo "index.html is missing from build output"
             exit 1
           fi
-          if [ ! -f "dist/assets/index.js" ] && [ ! -f "dist/assets/index-*.js" ]; then
-            echo "JavaScript bundle is missing from build output"
+          if [ ! -d "dist/assets" ]; then
+            echo "assets directory is missing from build output"
+            exit 1
+          fi
+          # Check for any .js file in assets directory
+          if [ -z "$(find dist/assets -name '*.js' -type f)" ]; then
+            echo "No JavaScript files found in assets directory"
             exit 1
           fi
 
