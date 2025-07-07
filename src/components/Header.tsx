@@ -55,7 +55,7 @@ const Header = () => {
 
           {/* Download CV Button */}
           <motion.a
-            href="./Mohamed-Shehata-CV.pdf"
+            href="Mohamed-Shehata-CV.pdf"
             download
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -92,7 +92,7 @@ const Header = () => {
               </a>
             ))}
             <a
-              href="./Mohamed-Shehata-CV.pdf"
+              href="Mohamed-Shehata-CV.pdf"
               download
               className="flex items-center space-x-2 mt-4 bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors duration-200 w-fit"
             >

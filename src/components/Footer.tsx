@@ -80,7 +80,7 @@ const Footer = () => {
                 className="mb-6"
               >
                 <img 
-                  src="./my-logo.png" 
+                  src="my-logo.png" 
                   alt="Mohamed Shehata Logo" 
                   className="h-20 w-auto filter brightness-0 invert opacity-90 hover:opacity-100 transition-opacity duration-300"
                 />
