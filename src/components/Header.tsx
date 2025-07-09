@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Download } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useScrollTo } from '../hooks/useScrollTo';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const CV_DRIVE_URL = 'https://drive.google.com/uc?export=download&id=1eCFYI-koapwet4LFa0AExdAJDLu1GDv0';
+  const scrollTo = useScrollTo();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,12 +18,30 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { href: '#home', label: 'Home' },
-    { href: '#about', label: 'About' },
-    { href: '#services', label: 'Services' },
-    { href: '#portfolio', label: 'Portfolio' },
-    { href: '#contact', label: 'Contact' },
+    { href: 'home', label: 'Home' },
+    { href: 'about', label: 'About' },
+    { href: 'services', label: 'Services' },
+    { href: 'portfolio', label: 'Portfolio' },
+    { href: 'contact', label: 'Contact' },
   ];
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    scrollTo(href);
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+    }
+  };
+
+  const handleDownloadCV = (e: React.MouseEvent) => {
+    // Create a temporary link element
+    const link = document.createElement('a');
+    link.href = CV_DRIVE_URL;
+    link.setAttribute('download', 'Mohamed-Shehata-CV.pdf'); // Set desired filename
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <motion.header
@@ -44,7 +65,8 @@ const Header = () => {
             {navItems.map((item) => (
               <motion.a
                 key={item.href}
-                href={item.href}
+                href={`#${item.href}`}
+                onClick={(e) => handleNavClick(e, item.href)}
                 whileHover={{ y: -2 }}
                 className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
               >
@@ -54,16 +76,15 @@ const Header = () => {
           </nav>
 
           {/* Download CV Button */}
-          <motion.a
-            href="Mohamed-Shehata-CV.pdf"
-            download
+          <motion.button
+            onClick={handleDownloadCV}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="hidden md:flex items-center space-x-2 bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors duration-200"
           >
             <Download size={18} />
             <span>Download CV</span>
-          </motion.a>
+          </motion.button>
 
           {/* Mobile Menu Button */}
           <button
@@ -84,21 +105,20 @@ const Header = () => {
             {navItems.map((item) => (
               <a
                 key={item.href}
-                href={item.href}
-                onClick={() => setIsMenuOpen(false)}
+                href={`#${item.href}`}
+                onClick={(e) => handleNavClick(e, item.href)}
                 className="block py-2 text-gray-700 hover:text-blue-600 transition-colors duration-200"
               >
                 {item.label}
               </a>
             ))}
-            <a
-              href="Mohamed-Shehata-CV.pdf"
-              download
+            <button
+              onClick={handleDownloadCV}
               className="flex items-center space-x-2 mt-4 bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors duration-200 w-fit"
             >
               <Download size={18} />
               <span>Download CV</span>
-            </a>
+            </button>
           </motion.nav>
         )}
       </div>

@@ -114,11 +114,11 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+    <section id="contact" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute w-96 h-96 bg-blue-50 rounded-full blur-3xl -top-48 -left-48 opacity-50"></div>
-        <div className="absolute w-96 h-96 bg-purple-50 rounded-full blur-3xl -bottom-48 -right-48 opacity-50"></div>
+        <div className="absolute w-64 sm:w-96 h-64 sm:h-96 bg-blue-50 rounded-full blur-3xl -top-32 -left-32 sm:-top-48 sm:-left-48 opacity-50"></div>
+        <div className="absolute w-64 sm:w-96 h-64 sm:h-96 bg-purple-50 rounded-full blur-3xl -bottom-32 -right-32 sm:-bottom-48 sm:-right-48 opacity-50"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -126,7 +126,7 @@ const Contact = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-12 sm:mb-16 lg:mb-20"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
@@ -135,32 +135,33 @@ const Contact = () => {
             transition={{ duration: 0.5 }}
             className="inline-block mb-4"
           >
-            <div className="bg-blue-50 rounded-full p-3">
-              <Mail size={32} className="text-blue-500" />
+            <div className="bg-blue-50 rounded-full p-2 sm:p-3">
+              <Mail size={24} className="text-blue-500 sm:hidden" />
+              <Mail size={32} className="text-blue-500 hidden sm:block" />
             </div>
           </motion.div>
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
             Let's Work Together
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto px-4 sm:px-0">
             Have a project in mind? Let's discuss how we can bring your ideas to life with modern web solutions.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-5 gap-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-2 space-y-8"
+            className="md:col-span-1 lg:col-span-2 space-y-6 sm:space-y-8"
           >
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+            <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-100">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">
                 Contact Information
               </h3>
               
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 {contactInfo.map((info, index) => (
                   <motion.div
                     key={index}
@@ -170,21 +171,21 @@ const Contact = () => {
                     transition={{ delay: index * 0.1 }}
                     className="group"
                   >
-                    <div className="flex items-center space-x-4 p-4 rounded-xl hover:bg-gray-50 transition-all duration-300">
+                    <div className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 rounded-xl hover:bg-gray-50 transition-all duration-300">
                       <div className="bg-white p-2 rounded-lg shadow-sm border border-gray-100 group-hover:scale-110 transition-transform duration-300">
                         {info.icon}
                       </div>
                       <div>
-                        <h4 className="font-medium text-gray-700">{info.title}</h4>
+                        <h4 className="font-medium text-gray-700 text-sm sm:text-base">{info.title}</h4>
                         {info.link !== "#" ? (
                           <a
                             href={info.link}
-                            className="text-gray-600 hover:text-blue-500 transition-colors duration-200"
+                            className="text-gray-600 hover:text-blue-500 transition-colors duration-200 text-sm sm:text-base break-all"
                           >
                             {info.value}
                           </a>
                         ) : (
-                          <span className="text-gray-600">{info.value}</span>
+                          <span className="text-gray-600 text-sm sm:text-base">{info.value}</span>
                         )}
                       </div>
                     </div>
@@ -193,16 +194,16 @@ const Contact = () => {
               </div>
 
               {/* Social Links */}
-              <div className="mt-8 pt-8 border-t border-gray-100">
-                <h4 className="font-semibold text-gray-900 mb-4">Connect With Me</h4>
-                <div className="flex space-x-4">
+              <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-gray-100">
+                <h4 className="font-semibold text-gray-900 mb-4 text-sm sm:text-base">Connect With Me</h4>
+                <div className="flex space-x-3 sm:space-x-4">
                   {socialLinks.map((social, index) => (
                     <motion.a
                       key={index}
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`p-3 rounded-full bg-gray-50 text-gray-600 ${social.color} transition-all duration-300 hover:scale-110`}
+                      className={`p-2 sm:p-3 rounded-full bg-gray-50 text-gray-600 ${social.color} transition-all duration-300 hover:scale-110`}
                       whileHover={{ y: -3 }}
                     >
                       {social.icon}
@@ -218,13 +219,13 @@ const Contact = () => {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-3"
+            className="md:col-span-1 lg:col-span-3"
           >
-            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg border border-gray-100">
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
                       Full Name *
                     </label>
                     <input
@@ -234,13 +235,13 @@ const Contact = () => {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                      className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-sm sm:text-base"
                       placeholder="Your full name"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
                       Email Address *
                     </label>
                     <input
@@ -250,14 +251,14 @@ const Contact = () => {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                      className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-sm sm:text-base"
                       placeholder="your.email@example.com"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="projectType" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="projectType" className="block text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
                     Project Type *
                   </label>
                   <select
@@ -266,7 +267,7 @@ const Contact = () => {
                     required
                     value={formData.projectType}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-sm sm:text-base"
                   >
                     <option value="">Select project type</option>
                     <option value="laravel">Laravel Development</option>
@@ -279,7 +280,7 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
                     Project Details *
                   </label>
                   <textarea
@@ -289,13 +290,13 @@ const Contact = () => {
                     rows={6}
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none"
+                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none text-sm sm:text-base"
                     placeholder="Please describe your project requirements, timeline, and any specific features you need..."
                   />
                 </div>
 
                 {error && (
-                  <p className="text-red-500 text-sm text-center">{error}</p>
+                  <p className="text-red-500 text-xs sm:text-sm text-center">{error}</p>
                 )}
 
                 <motion.button
@@ -303,7 +304,7 @@ const Contact = () => {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   disabled={isSubmitting || isSubmitted}
-                  className={`w-full py-4 rounded-xl font-medium transition-all duration-300 ${
+                  className={`w-full py-3 sm:py-4 rounded-xl font-medium text-sm sm:text-base transition-all duration-300 ${
                     isSubmitted
                       ? 'bg-green-500 text-white'
                       : isSubmitting
@@ -314,21 +315,21 @@ const Contact = () => {
                   <span className="flex items-center justify-center space-x-2">
                     {isSubmitted ? (
                       <>
-                        <CheckCircle size={20} />
+                        <CheckCircle size={18} className="sm:w-5 sm:h-5" />
                         <span>Message Sent!</span>
                       </>
                     ) : isSubmitting ? (
                       <span>Sending...</span>
                     ) : (
                       <>
-                        <Send size={20} />
+                        <Send size={18} className="sm:w-5 sm:h-5" />
                         <span>Send Message</span>
                       </>
                     )}
                   </span>
                 </motion.button>
 
-                <p className="text-center text-sm text-gray-500 mt-4">
+                <p className="text-center text-xs sm:text-sm text-gray-500 mt-3 sm:mt-4">
                   I'll get back to you within 24 hours
                 </p>
               </form>
