@@ -238,9 +238,10 @@ const About = () => {
               className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 mt-8"
             >
               <h4 className="font-bold text-gray-900 mb-2">Education</h4>
+              
               <p className="text-gray-600">
-                <strong>Bachelorʼs degree in Computer Science, GPA: 3.03/4</strong><br />
-                Damietta University (Egypt)<br />
+                <strong>Bachelorʼs degree in Computer Science, Very Good with Honors</strong><br />
+                Faculty of Computers and AI, Damietta University (Egypt)<br />
                 <span className="text-sm text-gray-500">2020 - 2024</span>
               </p>
             </motion.div>
