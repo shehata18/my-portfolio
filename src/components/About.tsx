@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Code2, Lightbulb, Puzzle, Shield, Database, Globe, Server, Layout } from 'lucide-react';
+import phpLogo from '/new-php-logo.png';
 
 const About = () => {
   const skills = [
@@ -12,7 +13,7 @@ const About = () => {
     },
     {
       name: "PHP",
-      icon: <img src="/new-php-logo.png" alt="PHP" className="w-8 h-4" />
+      icon: <img src={phpLogo} alt="PHP" className="w-8 h-4" />
     },
     {
       name: "WordPress",
