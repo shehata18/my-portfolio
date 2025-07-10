@@ -248,6 +248,13 @@ const Hero = () => {
             </motion.div>
 
             <div className="space-y-6">
+              <motion.h2
+                variants={itemVariants}
+                className="text-lg font-medium text-gray-600 font-mono"
+              >
+                Hi, I'm Mohamed Shehata 👋
+              </motion.h2>
+
               <motion.h1
                 variants={itemVariants}
                 className="text-6xl lg:text-7xl font-bold text-gray-900 leading-tight tracking-tight"
@@ -262,7 +269,7 @@ const Hero = () => {
                 variants={itemVariants}
                 className="text-xl text-gray-600 leading-relaxed max-w-2xl font-light"
               >
-                Crafting robust web applications and dynamic websites with 2+ years of experience. 
+                Crafting robust web applications and dynamic websites with +2 years of experience. 
                 Specializing in Laravel backend development and WordPress customization.
               </motion.p>
             </div>
