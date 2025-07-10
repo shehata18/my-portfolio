@@ -6,6 +6,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     projectType: '',
     message: ''
   });
@@ -29,6 +30,7 @@ const Contact = () => {
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
+          phone: formData.phone,
           projectType: formData.projectType,
           message: formData.message,
           _subject: 'New Contact Form Submission',
@@ -44,6 +46,7 @@ const Contact = () => {
         setFormData({
           name: '',
           email: '',
+          phone: '',
           projectType: '',
           message: ''
         });
@@ -81,7 +84,7 @@ const Contact = () => {
     {
       icon: <MapPin className="text-red-500" size={24} />,
       title: "Location",
-      value: "Egypt",
+      value: "Cairo, Egypt",
       link: "#"
     },
     {
@@ -255,6 +258,21 @@ const Contact = () => {
                       placeholder="your.email@example.com"
                     />
                   </div>
+                </div>
+
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-sm sm:text-base"
+                    placeholder="Enter your phone number"
+                  />
                 </div>
 
                 <div>
