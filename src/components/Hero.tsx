@@ -386,7 +386,7 @@ const Hero = () => {
                     }}
                   />
                   <img
-                    src="MyPhoto.jpg"
+                    src="profile-photo.jpg"
                     alt="Mohamed Shehata"
                     className="w-full h-auto object-cover transform hover:scale-[1.02] transition-transform duration-700"
                   />
