@@ -359,36 +359,13 @@ const Hero = () => {
             variants={itemVariants}
             className="relative"
           >
-            <div className="relative w-full max-w-md mx-auto">
-              <motion.div
-                animate={{
-                  rotate: [6, 8, 6],
-                  scale: [1, 1.02, 1],
-                }}
-                transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-                className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-3xl"
-              />
-              <div className="relative bg-white p-3 rounded-3xl shadow-2xl transform hover:scale-[1.01] transition-transform duration-300">
+            <div className="relative w-full max-w-sm mx-auto">
+              <div className="relative bg-white p-3 rounded-3xl shadow-lg transform hover:scale-[1.01] transition-transform duration-300">
                 <div className="relative overflow-hidden rounded-2xl">
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-tr from-blue-400/20 to-purple-500/20 mix-blend-overlay"
-                    animate={{
-                      opacity: [0.5, 0.8, 0.5],
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                  />
                   <img
                     src="profile-photo.jpg"
                     alt="Mohamed Shehata"
-                    className="w-full h-auto object-cover transform hover:scale-[1.02] transition-transform duration-700"
+                    className="w-full h-[500px] object-cover transform hover:scale-[1.02] transition-transform duration-700"
                   />
                 </div>
               </div>
