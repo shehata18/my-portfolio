@@ -1,9 +1,31 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Clock } from 'lucide-react';
+import { ExternalLink, Github, Clock, Lock } from 'lucide-react';
 
 const Portfolio = () => {
   const projects = [
+    {
+      title: "Aqar-guide Real Estate Dashboard",
+      description: "A comprehensive real estate broker management system with advanced admin dashboard built using Laravel Filament, featuring complete property management, AI integration, and location services. The platform includes both a powerful admin interface and a RESTful API for mobile applications.",
+      image: "/1.png",
+      tech: ["Laravel", "Filament", "MySQL", "Google Maps API", "DeepSeek AI", "REST API", "BeOn OTP", "Flutter"],
+      github: null,
+      demo: null,
+      isPrivate: true,
+      category: "Laravel",
+      features: [
+        "Advanced Filament dashboard with real-time statistics and charts",
+        "Complete broker and company management system",
+        "Property management with Google Maps integration",
+        "AI-powered chatbot using DeepSeek for customer support",
+        "OTP authentication integration with BeOn",
+        "RESTful API with optimized search and filtering",
+        "Comprehensive location management (governorates & cities)",
+        "Real-time analytics and reporting dashboard",
+        "Facilities and unit types management",
+        "Query optimization for high-performance searches"
+      ]
+    },
     {
       title: "Laravel Tasks API",
       description: "A comprehensive task management API built with Laravel, featuring user authentication, CRUD operations, and advanced filtering capabilities.",
@@ -288,7 +310,14 @@ const Portfolio = () => {
 
                   {/* Action Buttons */}
                   <div className="flex space-x-4 pt-2">
-                    {project.demo !== "#" && (
+                    {project.isPrivate ? (
+                      <div className="flex-1 flex items-center justify-center space-x-2 bg-gray-700/30 text-gray-400 px-4 py-2 rounded-xl text-sm font-medium">
+                        <Lock size={16} />
+                        <span>Private Project</span>
+                      </div>
+                    ) : (
+                      <>
+                        {project.demo && project.demo !== "#" && (
                       <motion.a
                         href={project.demo}
                         target="_blank"
@@ -301,8 +330,8 @@ const Portfolio = () => {
                         <span>Live Demo</span>
                       </motion.a>
                     )}
-                    
-                    {project.github !== "#" && (
+                        
+                        {project.github && project.github !== "#" && (
                       <motion.a
                         href={project.github}
                         target="_blank"
@@ -314,6 +343,8 @@ const Portfolio = () => {
                         <Github size={16} className="group-hover:rotate-12 transition-transform duration-300" />
                         <span>View Code</span>
                       </motion.a>
+                        )}
+                      </>
                     )}
                   </div>
                 </div>
