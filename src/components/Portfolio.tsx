@@ -7,7 +7,7 @@ const Portfolio = () => {
     {
       title: "Aqar-guide Real Estate Dashboard",
       description: "A comprehensive real estate broker management system with advanced admin dashboard built using Laravel Filament, featuring complete property management, AI integration, and location services. The platform includes both a powerful admin interface and a RESTful API for mobile applications.",
-      image: "/1.png",
+      image: "1.png",
       tech: ["Laravel", "Filament", "MySQL", "Google Maps API", "DeepSeek AI", "REST API", "BeOn OTP", "Flutter"],
       github: null,
       demo: null,
