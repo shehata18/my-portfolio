@@ -85,6 +85,38 @@ const About = () => {
         <path fill="#1976D2" d="M42 12H6c-2.2 0-4 1.8-4 4v16c0 2.2 1.8 4 4 4h36c2.2 0 4-1.8 4-4V16c0-2.2-1.8-4-4-4z"/>
         <path fill="#FFF" d="M14 21h4v6h-4zm8 0h4v6h-4zm8 0h4v6h-4z"/>
       </svg>
+    },
+    {
+      name: "Kubernetes",
+      icon: <img src="kubernetes.png" alt="Kubernetes" className="w-6 h-6" />
+    },
+    {
+      name: "Terraform",
+      icon: <img src="terraform.png" alt="Terraform" className="w-6 h-6" />
+    },
+    {
+      name: "Linux",
+      icon: <img src="linux.png" alt="Linux" className="w-6 h-6" />
+    },
+    {
+      name: "Ansible",
+      icon: <img src="Ansible.png" alt="Ansible" className="w-6 h-6" />
+    },
+    {
+      name: "AWS",
+      icon: <img src="Amazon.png" alt="AWS" className="w-6 h-6" />
+    },
+    {
+      name: "GitLab",
+      icon: <img src="GitLab.png" alt="GitLab" className="w-6 h-6" />
+    },
+    {
+      name: "Helm",
+      icon: <img src="helm.png" alt="Helm" className="w-6 h-6" />
+    },
+    {
+      name: "OpenShift",
+      icon: <img src="openshift.png" alt="OpenShift" className="w-6 h-6" />
     }
   ];
 
@@ -140,19 +172,21 @@ const About = () => {
             className="space-y-6"
           >
             <h3 className="text-2xl font-bold text-gray-900">
-              Computer Science Graduate & Web Developer
+              Computer Science Graduate & Backend Developer
             </h3>
             
             <p className="text-gray-600 leading-relaxed">
-              I'm a dedicated web developer with a Bachelor's degree in Computer Science from 
-              Damietta University. With over 2 years of professional experience, I specialize 
-              in creating robust web applications using Laravel and developing custom WordPress solutions.
+              I'm a dedicated software engineer with a Bachelor's degree in Computer Science from 
+              Damietta University. With over 1 years of professional experience, I started as a Laravel 
+              backend developer and have since expanded my expertise into Cloud and DevOps technologies,
+              embracing the full software delivery lifecycle.
             </p>
 
             <p className="text-gray-600 leading-relaxed">
-              My expertise spans from backend API development to frontend user interfaces, 
-              database design, and system architecture. I'm passionate about writing clean, 
-              maintainable code and staying updated with the latest web technologies.
+              My expertise spans from backend API development and system architecture to modern DevOps practices
+              including containerization, infrastructure as code, and cloud solutions. I'm passionate about 
+              building scalable systems, automating deployment pipelines, and staying current with emerging 
+              technologies in both web development and cloud infrastructure.
             </p>
 
             {/* Work Process Section */}
@@ -235,13 +269,31 @@ const About = () => {
               viewport={{ once: true }}
               className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 mt-8"
             >
-              <h4 className="font-bold text-gray-900 mb-2">Education</h4>
+              <h4 className="font-bold text-gray-900 mb-4">Education</h4>
               
-              <p className="text-gray-600">
-                <strong>Bachelorʼs degree in Computer Science, Very Good with Honors</strong><br />
-                Faculty of Computers and AI, Damietta University (Egypt)<br />
-                <span className="text-sm text-gray-500">2020 - 2024</span>
-              </p>
+              <div className="space-y-6">
+                <div className="border-b border-gray-100 pb-4">
+                  <p className="text-gray-600">
+                    <strong className="text-gray-900">Bachelorʼs degree in Computer Science, Very Good with Honors</strong><br />
+                    Faculty of Computers and AI, Damietta University (Egypt)<br />
+                    <span className="text-sm text-gray-500">2020 - 2024</span>
+                  </p>
+                </div>
+
+                <div>
+                  <p className="text-gray-600">
+                    <strong className="text-gray-900">Cloud DevOps Accelerator Scholarship</strong><br />
+                    National Telecommunication Institute (NTI)<br />
+                    <span className="text-sm text-gray-500">2025 • 420 Hours</span><br />
+                    <span className="mt-2 text-sm text-gray-600 block">
+                      Covered: Linux (RHCSA), Ansible Automation, Kubernetes, Red Hat OpenShift, 
+                      Helm, Terraform, Jenkins, GitLab CI/CD, and AWS Cloud (Practitioner, 
+                      Developer Associate, Security Foundations). Hands-on labs in containerization, 
+                      Infrastructure as Code, CI/CD pipelines, and cloud security.
+                    </span>
+                  </p>
+                </div>
+              </div>
             </motion.div>
           </motion.div>
         </div>

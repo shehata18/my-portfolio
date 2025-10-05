@@ -257,20 +257,17 @@ const Hero = () => {
 
               <motion.h1
                 variants={itemVariants}
-                className="text-6xl lg:text-7xl font-bold text-gray-900 leading-tight tracking-tight"
+                className="text-6xl lg:text-5xl font-bold text-gray-900 leading-tight tracking-tight"
               >
-                Backend Laravel
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 block">
-                  Developer
-                </span>
+                Backend Laravel & Cloud DevOps <span style={{ color: "blue" }}>Engineer</span>
               </motion.h1>
               
               <motion.p
                 variants={itemVariants}
                 className="text-xl text-gray-600 leading-relaxed max-w-2xl font-light"
               >
-                Crafting robust web applications and dynamic websites with +2 years of experience. 
-                Specializing in Laravel backend development and WordPress customization.
+                Crafting robust web applications and cloud infrastructure with +1 years of experience. 
+                Specializing in Laravel backend development, DevOps practices, and cloud technologies.
               </motion.p>
             </div>
 
