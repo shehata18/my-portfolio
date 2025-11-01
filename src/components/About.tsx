@@ -172,7 +172,7 @@ const About = () => {
             className="space-y-6"
           >
             <h3 className="text-2xl font-bold text-gray-900">
-              Computer Science Graduate & Backend Developer
+              Computer Science Graduate & Backend Developer & Cloud DevOps Engineer
             </h3>
             
             <p className="text-gray-600 leading-relaxed">
