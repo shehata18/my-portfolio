@@ -158,7 +158,7 @@ const About = () => {
         >
           <h2 className="text-4xl font-bold text-gray-900 mb-4">About Me</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Passionate web developer with expertise in Backend Development using php Laravel and WordPress, 
+            Passionate web developer with expertise in Backend Development using php Laravel, Cloud & DevOps technologies,
             dedicated to creating exceptional digital experiences.
           </p>
         </motion.div>
