@@ -6,7 +6,8 @@ import { useScrollTo } from '../hooks/useScrollTo';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const CV_DRIVE_URL = 'https://drive.google.com/uc?export=download&id=1EYEVkBbgQhrKrwQW04fQvSoFHYgKT-FP';
+  // const CV_DRIVE_URL = 'https://drive.google.com/uc?export=download&id=1EYEVkBbgQhrKrwQW04fQvSoFHYgKT-FP';
+  const CV_DRIVE_URL = 'https://drive.google.com/drive/folders/1TZmL-snBOQsTa5ciUWTMhYeTBUi2IW3M?usp=sharing';
   const scrollTo = useScrollTo();
 
   
